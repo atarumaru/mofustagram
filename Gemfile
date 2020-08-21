@@ -62,3 +62,6 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'carrierwave'
 gem 'haml-rails'
+gem 'pry-rails'
+gem 'compass-rails','3.1.0'
+gem 'sprockets', '3.7.2'
