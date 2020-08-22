@@ -7,8 +7,9 @@ class PostsController < ApplicationController
   end
   def create
     @post = Post.new(post_params)
-    if @post.save
-      resirect_to root_path
+    if @post.save!
+      binding.pry
+      redirect_to root_path
     else
       render :new
     end
@@ -17,6 +18,7 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit(images_attributes: [:src,:id])
+    params.require(:post).permit( images_attributes: [:src])
   end
+
 end
