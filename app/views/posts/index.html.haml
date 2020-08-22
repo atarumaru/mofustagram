@@ -1,0 +1,11 @@
+.wrapper
+  .header
+    %input.search_field{name: "category",placeholder: "検索する", :type => "email", :value => ""}/
+  .body
+    .posts
+      .post
+        .image_box
+          //= render @posts
+        .category
+        .user_name
+  .footer

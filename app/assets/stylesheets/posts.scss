@@ -1,0 +1,13 @@
+.wrapper{
+  height: 1000px;
+  width: 100%;
+}
+.header{
+  height: 10%;
+  width: 100%;
+  background-color: red;
+}
+.body{
+  height: calc(100% - 10%);
+  background-color: blue;
+}
