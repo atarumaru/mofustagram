@@ -10,7 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_08_21_080757) do
+ActiveRecord::Schema.define(version: 2020_08_22_015053) do
+
+  create_table "images", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "src"
+    t.bigint "post_id"
+    t.index ["post_id"], name: "index_images_on_post_id"
+  end
 
   create_table "posts", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "image", null: false
@@ -21,4 +27,5 @@ ActiveRecord::Schema.define(version: 2020_08_21_080757) do
     t.index ["user_id_id"], name: "index_posts_on_user_id_id"
   end
 
+  add_foreign_key "images", "posts"
 end
