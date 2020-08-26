@@ -5,7 +5,12 @@
     .posts
       .post
         .image_box
-        
+          - @posts.each do |post|
+            = image_tag post.images.first.src.url
+            %span.name
+              = post.name.to_i
         .category
         .user_name
+    .new-post-button
+      = link_to "投稿する",new_post_path
   .footer

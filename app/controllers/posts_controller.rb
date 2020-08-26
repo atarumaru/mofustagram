@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
   def index
-    @posts = Post.includes(:images).order('created_at DESC')
+    @posts = Post.all.limit(5)
   end
   def new
     @post = Post.new
