@@ -1,12 +1,13 @@
 .wrapper{
-  height: 3000px;
+  height: 1500px;
   width: 100%;
   background-color: cornsilk;
 }
 .header{
   width: 100%;
-  height: 5%;
-  background-color: red;
+  height: 2%;
+  display: flex;
+  margin-bottom: 20px;
 }
 .body{
   height: calc(100% - 30%);
@@ -17,7 +18,10 @@
 }
 .form{
   &__image{
-    height: 40%;
-    background-color:black;
+    height: 200px;
+    background-color: red;
+  }
+  &__name{
+    height: 100px;
   }
 }
