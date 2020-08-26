@@ -7,8 +7,8 @@
         .image_box
           - @posts.each do |post|
             = image_tag post.images.first.src.url
-            %span.name
-              = post.name.to_i
+            .name
+              = post.name.to_s
         .category
         .user_name
     .new-post-button
