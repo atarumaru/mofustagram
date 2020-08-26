@@ -1,11 +1,17 @@
 .wrapper
   .header
     %input.search_field{name: "category",placeholder: "検索する", :type => "email", :value => ""}/
+    %span.name
+      mofstagram
   .body
     .posts
       .post
         .image_box
-          //= render @posts
+          - @posts.each do |post|
+            .post_image
+              = image_tag post.images.first.src.url
+            .name
+              = post.name.to_s
         .category
         .user_name
   .footer
