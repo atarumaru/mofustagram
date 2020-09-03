@@ -16,3 +16,5 @@
 
  @import "posts.scss";
  @import "reset.scss";
+ @import "font-awesome-sprockets";
+@import "font-awesome";

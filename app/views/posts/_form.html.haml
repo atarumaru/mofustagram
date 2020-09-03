@@ -2,11 +2,13 @@
   .header
     //%input.search_field{name: "category",placeholder: "検索する", :type => "email", :value => ""}/
   .body
+    %labe 投稿画像
     = form_with model: @post ,local: true do |f|
       .form__image
         = f.fields_for :images do |i|
           = i.file_field :src
+      %label 画像名
       .form__name
         = f.text_field :name
       .form__button
-        = f.submit
+        = f.submit "投稿する"
