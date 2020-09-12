@@ -11,8 +11,8 @@
       %ul.lists-right
         %li.lists-right__item
           -if user_signed_in?
-            = link_to mypage_index_path, class:"lists-right__item-mypage" do
-              マイページ
+            //= link_to mypage_index_path, class:"lists-right__item-mypage" do
+            //  マイページ
             = link_to destroy_user_session_path, class:"lists-right__item-destroy", method: :delete do
               ログアウト
           -else   
