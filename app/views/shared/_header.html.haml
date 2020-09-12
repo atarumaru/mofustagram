@@ -6,6 +6,8 @@
           %input{name: "utf8", type: "hidden", value: "✓"}/
           %input{class:'innner-top__box-input', name: "key", placeholder: "キーワードから探す" }/
           %button{type: "submit"}
+            %span.innner-top__box__icon
+              = image_tag asset_path('icon-search 1.png'), type: '', alt: ''
       %ul.lists-right
         %li.lists-right__item
           -if user_signed_in?
