@@ -1,0 +1,22 @@
+.header
+  .header-inner
+    .innner-top
+      .innner-top__box
+        %form{"accept-charset": "UTF-8", action: "#", method: "get"}
+          %input{name: "utf8", type: "hidden", value: "✓"}/
+          %input{class:'innner-top__box-input', name: "key", placeholder: "キーワードから探す" }/
+          %button{type: "submit"}
+            %span.innner-top__box__icon
+              = image_tag asset_path('icon-search 1.png'), type: '', alt: ''
+      %ul.lists-right
+        %li.lists-right__item
+          -if user_signed_in?
+            = link_to mypage_index_path, class:"lists-right__item-mypage" do
+              マイページ
+            = link_to destroy_user_session_path, class:"lists-right__item-destroy", method: :delete do
+              ログアウト
+          -else   
+            = link_to new_user_session_path, class:"lists-right__item-login" do
+              ログイン
+            = link_to new_user_registration_path, class:"lists-right__item-register" do
+              新規会員登録
