@@ -1,10 +1,7 @@
 .wrapper
-  .header
-    %input.search_field{name: "category",placeholder: "検索する", :type => "email", :value => ""}/
-    %span.name
-      mofstagram
-    .new-post-button
-      = link_to "投稿する",new_post_path
+  = render partial: 'shared/header'
+  .new-post-button
+    = link_to "投稿する",new_post_path
   .body
     .posts
       .post
@@ -14,7 +11,3 @@
               = image_tag post.images.first.src.url
             .name
               = post.name.to_s
-        .category
-        .user_name
-    
-  .footer
