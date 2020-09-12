@@ -1,12 +1,19 @@
-.wrapper
-  .header
-    //%input.search_field{name: "category",placeholder: "検索する", :type => "email", :value => ""}/
-  .body
+.contents
+  .form__body
     = form_with model: @post ,local: true do |f|
+      %h2
+        投稿する
       .form__image
-        = f.fields_for :images do |i|
-          = i.file_field :src
+        .form__image__icon
+          %label
+            = icon('fas', 'camera')
+            .input__image
+              = f.fields_for :images do |i|
+                = i.file_field :src
+      %label 画像名
       .form__name
         = f.text_field :name
-      .form__button
-        = f.submit
+      .buttons
+        = f.submit "投稿する",class:"buttons__send"
+        =link_to root_path do
+          .buttons__back もどる
