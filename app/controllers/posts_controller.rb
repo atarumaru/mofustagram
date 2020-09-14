@@ -3,8 +3,12 @@ class PostsController < ApplicationController
     @posts = Post.all.limit(5)
   end
   def new
+    if user_signed_in?
     @post = Post.new
     @post.images.new
+    else
+      redirect_to new_user_session_path
+    end
   end
   def create
     @post = Post.new(post_params)

@@ -29,9 +29,13 @@ ActiveRecord::Schema.define(version: 2020_09_12_124611) do
 
   create_table "posts", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name"
+    t.integer "user_id", null: false
+    t.integer "post_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "user_id"
+    t.index ["post_id"], name: "index_posts_on_post_id"
+    t.index ["user_id", "post_id"], name: "index_posts_on_user_id_and_post_id", unique: true
+    t.index ["user_id"], name: "index_posts_on_user_id"
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
