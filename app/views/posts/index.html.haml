@@ -11,3 +11,4 @@
               = image_tag post.images.first.src.url
             .name
               = post.name.to_s
+            = render "likes/like", post: post
