@@ -6,7 +6,6 @@ class LikesController < ApplicationController
 
   def destroy
     @post = Like.find(params[:id]).post
-    binding.pry
     @post.uniine(current_user)
   end
 

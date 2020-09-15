@@ -11,4 +11,6 @@
               = image_tag post.images.first.src.url
             .name
               = post.name.to_s
-            = render "likes/like", post: post
+            .item-button-container
+              .item-button-container__left
+                = render partial: "likes/like"#,locals: { post: @post, posts: @posts, likes: @likes, like: @like}
