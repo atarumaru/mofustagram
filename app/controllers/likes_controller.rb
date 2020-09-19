@@ -1,12 +1,20 @@
 class LikesController < ApplicationController
+
   def create
-    @post = Post.find(params[:post_id])
-    @post.iine(current_user)
+    @like = Like.create(user_id: current_user.id, post_id: params[:post_id])
+    @likes = Like.where(post_id: params[:post_id])
+    get_post
   end
 
   def destroy
-    @post = Like.find(params[:id]).post
-    @post.uniine(current_user)
+    @like = Like.find_by(user_id: current_user.id, post_id: params[:post_id])
+    @like.destroy
+    @likes = Like.where(post_id: params[:post_id])
+    get_post
+  end
+
+  def get_post
+    @post = Post.find(params[:post_id])
   end
 
 end
