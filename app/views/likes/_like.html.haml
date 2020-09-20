@@ -2,7 +2,7 @@
 - if user_signed_in?
   - if post.like_user(current_user) 
     .item-button-container__left__dislike
-      =link_to post_like_path(current_user,post), method: "DELETE", remote: true do
+      =link_to post_like_path(post), method: "DELETE", remote: true do
         %i.fas.fa-heart
         %span いいね！
         %span 
