@@ -2,6 +2,9 @@ class PostsController < ApplicationController
   def index
     @posts = Post.all.limit(5)
   end
+  def show
+    @post = Post.find(params[:id])
+  end
   def new
     if user_signed_in?
     @post = Post.new

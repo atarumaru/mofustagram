@@ -7,11 +7,12 @@
       .post
         .image_box
           - @posts.each do |post|
-            .post_image
-              = image_tag post.images.first.src.url
-            .name
-              = post.name.to_s
-            .item-button-container
-              .item-button-container__left
-                = render partial: 'likes/like', locals: { post: post}
+            .post-list
+              = link_to post_path(post) do
+                .post_image
+                  = image_tag post.images.first.src.url
+                .name
+                  = post.name.to_s
+                
+              
                 

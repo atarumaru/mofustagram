@@ -9,7 +9,7 @@
         = post.likes_count
   - else
     .item-button-container__left__like
-      =link_to post_likes_path(current_user,post), method: "POST", remote: true do
+      =link_to post_likes_path(post), method: "POST", remote: true do
         %i.fas.fa-heart
         %span いいね！
         %span
